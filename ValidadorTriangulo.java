@@ -5,7 +5,7 @@ public class ValidadorTriangulo{
         //Declaração de variáveis
         int a, b, c; //Lados de um triângulo
 
-        //Criação e instância fo objeto de entrada
+        //Criação e instância do objeto de entrada
         Scanner entrada = new Scanner(System.in);
 
         //Apresentação 
@@ -23,10 +23,18 @@ public class ValidadorTriangulo{
         if(( a < ( b + c )) && ( b < ( a + c )) && ( c < ( a + b ))){
             //É triângulo
             System.out.printf("%d, %d e %d formam triângulo!\n", a, b, c);
+
+            if((a == b) && (b == c)){
+                System.out.println("Triângulo Equilátero!");
+            } else if((a == b) || (b == c) || (a == c)){
+                System.out.println("Triângulo Isósceles!");
+            } else {
+                System.out.println("Triângulo Escaleno");
+            }
         } else {
             //Não é triângulo
             System.out.printf("\n%d, %d e %d NÃO formam triângulo!\n", a, b, c);
         }
+        }
 
     }
-}
